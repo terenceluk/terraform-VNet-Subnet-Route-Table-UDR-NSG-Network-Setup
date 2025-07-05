@@ -105,8 +105,8 @@ nsg_configs = {
         destination_address_prefix = "*"
         source_port_range          = "*"
         destination_port_range     = "443"
-      }
-    ]*/
+      }*/
+    ]
   }
 }
 
