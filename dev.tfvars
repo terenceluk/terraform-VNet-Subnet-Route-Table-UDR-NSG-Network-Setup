@@ -118,6 +118,12 @@ assignments = {
     vnet_name        = "vnet1" # Reference the VNet defined above with its name in the vnet_configs block
     route_table      = "rt1" # Reference the Route Table defined above with its name in the route_table_configs block
     nsg              = "nsg1" # Reference the Route Table defined above with its name in the nsg_configs block
+    delegation = { # Optional block for setting subnet delegation
+      name = "delegation"
+      service_delegation = {
+        name = "Microsoft.Web/serverFarms"
+      }
+    }
   }
   subnet2 = {
     name             = "contoso-dev-app-data-snet"
