@@ -43,7 +43,7 @@ variable "ip_groups" {
 variable "nsg_configs" {
   description = "Configuration for Network Security Groups (NSGs) and their rules."
   type = map(object({
-    name = string
+    name           = string
     security_rules = list(object({
       name                       = string
       priority                   = number
@@ -51,12 +51,14 @@ variable "nsg_configs" {
       access                     = string
       protocol                   = string
       source_address_prefix      = string
-      destination_address_prefix = string
+      destination_address_prefix = optional(string)      # Single string (optional)
+      destination_address_prefixes = optional(list(string)) # List of strings (optional)
       source_port_range          = string
       destination_port_range     = string
     }))
   }))
 }
+
 variable "assignments" {
   description = "Mapping of subnets to NSGs, Route Tables, and VNets."
   type = map(object({
