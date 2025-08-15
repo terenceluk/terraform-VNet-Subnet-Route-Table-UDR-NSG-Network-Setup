@@ -10,3 +10,9 @@ variable "rg_id" {
   type        = string
   default     = null
 }
+
+variable "tags" {
+  description = "A map of tags to apply to the Virtual Network."
+  type        = map(string)
+  default     = {}
+}
