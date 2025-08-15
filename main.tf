@@ -29,6 +29,7 @@ module "vnets" {
   location            = var.location
   resource_group_name = var.resource_group_name
   rg_id               = local.resource_group_id
+  tags                = var.tags
   depends_on          = [azurerm_resource_group.resource_group]
 }
 
@@ -50,6 +51,7 @@ module "route_tables" {
   routes              = each.value.routes
   location            = var.location
   resource_group_name = var.resource_group_name
+  tags                = var.tags
   depends_on          = [azurerm_resource_group.resource_group]
 }
 
@@ -74,6 +76,7 @@ module "ip_groups" {
   ip_groups           = var.ip_groups
   location            = var.location
   resource_group_name = var.resource_group_name
+  tags                = var.tags
   depends_on          = [azurerm_resource_group.resource_group]
 }
 */
@@ -86,6 +89,7 @@ module "nsgs" {
   location            = var.location
   resource_group_name = var.resource_group_name
   security_rules      = each.value.security_rules
+  tags                = var.tags
   depends_on          = [azurerm_resource_group.resource_group]
 }
 
@@ -101,4 +105,5 @@ module "nsg_assignments" {
     }
     if value.nsg != null # Skip subnets without NSGs
   }
+
 }
