@@ -15,3 +15,9 @@ variable "resource_group_name" {
   description = "Name of the resource group where the IP Groups will be created."
   type        = string
 }
+
+variable "tags" {
+  description = "A map of tags to apply to the IP Groups."
+  type        = map(string)
+  default     = {}
+}
