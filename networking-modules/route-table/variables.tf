@@ -29,3 +29,9 @@ variable "routes" {
     error_message = "next_hop_in_ip_address must be defined for routes with next_hop_type 'VirtualAppliance'."
   }
 }
+
+variable "tags" {
+  description = "A map of tags to apply to the Route Table."
+  type        = map(string)
+  default     = {}
+}
