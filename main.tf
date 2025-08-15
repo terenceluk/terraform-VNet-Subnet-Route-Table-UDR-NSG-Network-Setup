@@ -1,4 +1,5 @@
-locals {
+# We can either define tags as locals and reference local.tags define in tfvars and reference var.tags
+/*locals {
   tags = {
     terraform_managed = "true"
     WARNING           = "DO NOT MODIFY IN PORTAL"
@@ -6,6 +7,7 @@ locals {
     application       = "pointofsale"
   }
 }
+*/
 
 # Conditional creation or import of a resource group
 resource "azurerm_resource_group" "resource_group" {
@@ -116,4 +118,5 @@ module "nsg_assignments" {
   }
 
 }
+
 
