@@ -1,3 +1,12 @@
+locals {
+  tags = {
+    terraform_managed = "true"
+    WARNING           = "DO NOT MODIFY IN PORTAL"
+    environment       = var.environment
+    application       = "pointofsale"
+  }
+}
+
 # Conditional creation or import of a resource group
 resource "azurerm_resource_group" "resource_group" {
   count    = var.resource_group_mode == "create" ? 1 : 0
@@ -107,3 +116,4 @@ module "nsg_assignments" {
   }
 
 }
+
