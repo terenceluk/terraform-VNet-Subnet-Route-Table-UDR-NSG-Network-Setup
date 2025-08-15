@@ -150,3 +150,11 @@ ip_groups = {
   }
 }
 */
+
+# Tags
+tags = {
+  terraform_managed = "true"
+  WARNING           = "DO NOT MODIFY IN PORTAL"
+  environment       = "uat"
+  application       = "pointofsale"
+}
