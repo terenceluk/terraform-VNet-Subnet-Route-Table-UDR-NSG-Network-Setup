@@ -52,6 +52,7 @@ module "subnets" {
   address_prefixes     = each.value.address_prefixes
   virtual_network_name = module.vnets[each.value.vnet_name].name
   resource_group_name  = var.resource_group_name
+  delegation           = try(each.value.delegation, null)
 }
 
 # Call Route Table Module

@@ -67,5 +67,17 @@ variable "assignments" {
     vnet_name        = string
     route_table      = optional(string) # Name of the route table (null if none)
     nsg              = optional(string) # Name of the NSG (null if none)
+    delegation = optional(object({
+      name = string
+      service_delegation = object({
+        name = string
+      })
+    }))
   }))
+}
+
+variable "tags" {
+  description = "A map of tags to apply to supported resources."
+  type        = map(string)
+  default     = {}
 }
